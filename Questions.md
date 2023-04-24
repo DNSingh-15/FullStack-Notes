@@ -74,7 +74,7 @@ function greeting() {
 greeting();
 ```
 
-### 8. <span style="color: green;">new features in ES6 (ECMAScript)</span>
+### 8. new features in ES6 (ECMAScript)
 1. let
 2. const
 3. Arrow Functions
