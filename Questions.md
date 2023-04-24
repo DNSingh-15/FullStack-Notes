@@ -3,26 +3,26 @@
 ### 1. difference between var, let & const
 
 var => reassigned + redeclared
-`
+```
 var a = 5,
 var a = 10
-`
+```
 
 let => reassigned + non-redeclared
-`
+```
 let a = 5,
   a = 10
-`
+```
 
 cont => non-reassigned + non-redeclared
-`
+```
 const a = 5
-`
+```
 ### 2. difference between == , ===
-`
+```
 ==  => it compares only value
 === => compare value as well as data type
-`
+```
 
 ### 3. Promises, callback functions, async Await
 #### Promises
@@ -58,6 +58,34 @@ Hoisting is JavaScript's default behavior for use functions & variables before t
 generator function is a such type of function that we can pause and resume with the using of yield
 * 
 Generator Functions are memory efficient, they save a lot of memory
+
+### 7. closure
+closure is a function where an inner function has access to the outer function's variables and arguments
+
+```
+function greeting() {
+    let message = 'Hi';
+
+    function sayHi() {
+        console.log(message);
+    }
+    sayHi();
+}
+greeting();
+```
+
+### 8. <span style="color: green;">new features in ES6 (ECMAScript)</span>
+1. let
+2. const
+3. Arrow Functions
+4. For/of
+5. Classes
+6. Map Objects
+
+### 9. event loop
+event loop is a mechanism that allows the runtime to execute tasks asynchronously
+
+
 
 
 
