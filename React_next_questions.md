@@ -36,8 +36,27 @@ getServerSideProps is used to fetch data at request time
 ## Redux
 Redux is a state management library
 
+<img title="a title" alt="Alt text" src="https://www.clariontech.com/hs-fs/hubfs/Image3-43.png?width=417&name=Image3-43.png">
 
+### 1. Action
+what to do
 
+actions is an object that have a type filed it only tells what to do
+
+### 2. Reducer
+how to do 
+
+reducer is a function that take the current state and action as argument and return new state
+
+### 3. Store
+Store is an object which holds the state of the applications
+* here data is stored
+* store brings together the state, action and reducers
+
+methods --
+1. createStore()  -- how to create store
+2. dispatch() -- how to perform actions
+3. getState() -- how to get current state value
 
 
 
