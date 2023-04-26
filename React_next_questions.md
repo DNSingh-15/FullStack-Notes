@@ -2,15 +2,15 @@
 
 ### 1. React
 React is a JavaScript library for building user interfaces
+* react is a unidireactional ( we can pass data only from parent to child component )
 
 ### 2. Hooks
 Hooks are functions that allow to use the state and other features in functional components
 
 * it is introduced in react 18 update
 
-### 3. Redux
-Redux is a state management library
- 
+### 3. prop drilling
+It is a process of passing data from one component to another component ( parent to child and child to parent )
 
 
 ## Next.js
@@ -30,3 +30,19 @@ Next.js provides performance optimizations, such as automatic
 getStaticProps is used to fetch data at build time
 
 getServerSideProps is used to fetch data at request time
+
+
+
+## Redux
+Redux is a state management library
+
+
+
+
+
+
+
+
+
+
+ 
