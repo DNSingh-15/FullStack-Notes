@@ -1,6 +1,12 @@
 ## Javascript questions
 js is an object-oriented programming language that is having a lot of applications. 
 
+advantages -
+* Less server interaction
+* Immediate feedback
+* Richer interfaces
+* high performance
+
 It can be used for both client-side as well as server-side
 
 ### 1. difference between var, let & const
@@ -88,12 +94,13 @@ greeting();
 ### 9. event loop
 event loop is a mechanism that allows the runtime to execute tasks asynchronously
 
-### 10. Global variable scope
+### 10. Global variable and local variable and their scope
 variable that declared outside of the function is Global variable
 
-we can define it using => var, let and const
+* we can define it using => var, let and const
+* it can be accessed anywhere in the program
 
-it can be accessed anywhere in the program
+variable that declared inside of the function is local variable
 
 
 ### 11. Session State and the View State
@@ -103,6 +110,38 @@ Session state is saved on the server, ViewState is saved in the page
 
 ### 12. Is JavaScript a case-sensitive language
 Yes, here for keywords, variables, function names,we are using consistent capitalization of letters.
+
+### 13. cookie
+cookie is an amount of user information in web pages
+* user information data stored our computer
+
+When a web server has sent a web page to a browser, the connection is shut down, and the server forgets everything about the user
+so for that we are using the cookie
+* When a user visits a web page, his/her name can be stored in a cookie.
+* Next time the user visits the page, the cookie "remembers" his/her name.
+
+#### Create a Cookie
+
+```
+document.cookie = "username=John Doe";
+```
+
+### 14. Local storage & Session storage
+#### Local storage
+Local storage allows you to store data in the browser and there is no expiration date.
+* data is not sent back to the server for every HTTP request
+
+#### Session storage
+Session storage allows you to store data in the browser and the data is stored until the browser is closed.
+
+
+### 15. ‘Strict’ mode
+Strict mode is a way to introduce better error-checking
+* during strict mode, we cannot implicitly declared variables, or assign a value to a read-only property etc.
+* we can enable strict mode by adding “use strict” at top of the code
+
+
+
 
 
 
