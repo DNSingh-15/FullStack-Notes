@@ -141,13 +141,6 @@ Strict mode is a way to introduce better error-checking
 * we can enable strict mode by adding “use strict” at top of the code
 
 
-#### query
-Query are used to retrieve information from the URL of page
-exm => http://www.google.com/books/?id=5
-
-here  `req.query = ?id=5`
-
-
 
 
 
