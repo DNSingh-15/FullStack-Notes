@@ -13,3 +13,10 @@ params are used to send additional information to the server
 exm => http://www.google.com/books/1
 
 here  `req.param.id = 1`
+
+#### query
+Query are used to retrieve information from the URL of page
+exm => http://www.google.com/books/?id=5
+
+here  `req.query = ?id=5`
+
