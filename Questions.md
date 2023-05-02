@@ -1,4 +1,7 @@
 ## Javascript questions
+js is an object-oriented programming language that is having a lot of applications. 
+
+It can be used for both client-side as well as server-side
 
 ### 1. difference between var, let & const
 
@@ -85,7 +88,21 @@ greeting();
 ### 9. event loop
 event loop is a mechanism that allows the runtime to execute tasks asynchronously
 
+### 10. Global variable scope
+variable that declared outside of the function is Global variable
 
+we can define it using => var, let and const
+
+it can be accessed anywhere in the program
+
+
+### 11. Session State and the View State
+Session state is saved on the server, ViewState is saved in the page
+* in Session State have access all pages within a web application
+* ViewState is used for accessing a session only
+
+### 12. Is JavaScript a case-sensitive language
+Yes, here for keywords, variables, function names,we are using consistent capitalization of letters.
 
 
 
