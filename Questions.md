@@ -127,8 +127,9 @@ document.cookie = "username=John Doe";
 ```
 
 ### 14. Local storage & Session storage
+both are browser storage
 #### Local storage
-Local storage allows you to store data in the browser and there is no expiration date.
+Local storage allows you to store data in the browser and there is no expiration date until it's deleted manually.
 * data is not sent back to the server for every HTTP request
 
 #### Session storage
