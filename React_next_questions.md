@@ -100,6 +100,33 @@ here state is managed by the DOM and component's value is updated through its ev
 
  It is used for handling focus, media playback, and animations.
 
+### 16. React Fragment
+It is a pattern to handle the multiple elements, without adding an extra node to the DOM
+```
+a. return (
+    <React.Fragment>
+      <ChildA />
+      <ChildB />
+      <ChildC />
+    </React.Fragment>
+  );
+  
+  b. return (
+    <>
+      <ChildA />
+      <ChildB />
+      <ChildC />
+    </>
+  );
+  b.  return (
+      <div>
+        <td>Hello</td>
+        <td>World</td>
+      </div>
+    );
+```
+
+
 
 
 
