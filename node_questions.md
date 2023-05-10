@@ -102,6 +102,12 @@ used for the writing and reading stream
 4. Delete
 5. options
 
+### 14. Bufeers
+Buffers are temporary memory that is mainly used by stream to hold some data until it's consumed.
+
+#### Properties
+1. alloc() => ```var buf = Buffer.alloc(15)```
+2. form() => ```var buf = Buffer.from('abc')```
 
 
 
