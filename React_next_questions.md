@@ -6,8 +6,11 @@ React is a JavaScript library for building user interfaces
 
 ### 2. Hooks
 Hooks are functions that allow to use the state and other features in functional components
-
 * it is introduced in react 18 update
+#### a. useMemo
+useMemo is a react built-in hook, it returns a memoized value
+* usememo allows us to memoize expensive functions so that you can avoid calling them on every render
+
 
 ### 3. prop drilling
 It is a process of passing data from one component to another component ( parent to child and child to parent )
@@ -33,17 +36,20 @@ jsx give us the power to write HTML and Javascript combined
 
 ### 6. props
 props are argument passed into react component
+* props are immutable
 * props is used for the data transfer from parent to child component
 
-### 7. Why is React widely used
+### 7. states
+State is an object that holds data that can be changed within a component
+* state is mutable
+* used for rendering dynamic changes
+
+### 8. Why is React widely used
 1. because it has huge community and because of VDOM it is fast
 2. UI testing becomes very easy.
 3. high readability and easy understanding of code.
 4. React can be used for both client-side and server-side with using of next.
 5. It boosts application performance and efficiency.
-
-### 8. states
-State is an object that holds data that can be changed within a component
 
 #### types
 1. Local state.
@@ -61,11 +67,12 @@ event is an action that could be triggered by button click, mouse hover etc
 ### 10. Stateful and Stateless component
 #### Stateful
 components that hold some state, means statefull components are keep tracking of changing data
+* it has state
 
 #### Stateless
 components wihtout any state management is called stateless component
-
-components print out whatever is given
+* it doesn't have state, it has props
+* components print out whatever is given
 
 ### 11. Optimize the performance method
 1. code optmization
@@ -152,6 +159,7 @@ getServerSideProps is used to fetch data at request time
 
 ## Redux
 Redux is a state management library
+* it has single store
 
 <img title="a title" alt="Alt text" src="https://www.clariontech.com/hs-fs/hubfs/Image3-43.png?width=417&name=Image3-43.png">
 
