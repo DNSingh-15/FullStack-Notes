@@ -4,6 +4,16 @@
 React is a JavaScript library for building user interfaces
 * react is a unidireactional ( we can pass data only from parent to child component )
 
+### 2. Components
+Components are reusable pice of code 
+#### Types ---
+* Functional components
+* Class components
+
+### 3. props
+props are argument passed into react component
+* props is used for the data transfer from parent to child component
+
 ### 2. Hooks
 Hooks are functions that allow to use the state and other features in functional components
 * it is introduced in react 18 update
@@ -33,11 +43,6 @@ It is a file that is used in React
 
 jsx give us the power to write HTML and Javascript combined
 * browser is not supported the js file, Because JSX is not valid JavaScript, so browsers can't read it directly
-
-### 6. props
-props are argument passed into react component
-* props are immutable
-* props is used for the data transfer from parent to child component
 
 ### 7. states
 State is an object that holds data that can be changed within a component
