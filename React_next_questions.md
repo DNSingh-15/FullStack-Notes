@@ -11,15 +11,26 @@ Components are reusable pice of code
 * Class components
 
 ### 3. props
-props are argument passed into react component
+props are argument passed into react component and it is data transfer method
 * props is used for the data transfer from parent to child component
 
 ### 2. Hooks
-Hooks are functions that allow to use the state and other features in functional components
+Hooks are state and lifecycle methods in functional component.
 * it is introduced in react 18 update
-#### a. useMemo
-useMemo is a react built-in hook, it returns a memoized value
+#### a. useState
+useState is a hook that allows to store and manage data
+* state is mutable
+* used for rendering dynamic changes
+#### b. useEffect
+useEffect is a hook it's just like a function it runs on any render 
+#### c. useRef
+useRef is a hook it allows to continue values between renders.
+#### d. useContext 
+useContext hook allows components to access data without any rely on props
+#### e. useMemo
+useMemo is a react hook, it returns a memoized value
 * usememo allows us to memoize expensive functions so that you can avoid calling them on every render
+* usememo cache the result of a calculation between re-renders
 
 
 ### 3. prop drilling
@@ -43,11 +54,6 @@ It is a file that is used in React
 
 jsx give us the power to write HTML and Javascript combined
 * browser is not supported the js file, Because JSX is not valid JavaScript, so browsers can't read it directly
-
-### 7. states
-State is an object that holds data that can be changed within a component
-* state is mutable
-* used for rendering dynamic changes
 
 ### 8. Why is React widely used
 1. because it has huge community and because of VDOM it is fast
