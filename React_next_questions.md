@@ -23,15 +23,54 @@ useState is a hook that allows to store and manage data
 * used for rendering dynamic changes
 ### b. useEffect
 useEffect is a hook it's just like a function it runs on any render 
+```
+cindition rendering of useEffect 
+
+const [count, setCount] = useState(0);
+  useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  },[);     ============>>>>>>>> it runs only one time in the starting
+
+const [count, setCount] = useState(0);
+  useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  },[count);    ============>>>>>>>> it runs only when the count state 
+```
 ### c. useRef
-useRef is a hook it allows to continue values between renders.
+* useRef is a hook it allows to continue values between renders. ( alternative useState is not working then we have to go with useRef )
+* useRef is used for dom manupulation
+```
+sometimes we have to do direct modification on the html like-
+Focus, color, value etc we have to handle with useref 
+
+exm-
+ const inputRef = useRef();
+ const handlebutton = () => {
+      inputRef.current.focus();
+      inputRef.current.style.color="red"
+    }
+  };
+  return ( <input ref={inputRef} ... />
+  <button onClick={handlebutton}></button>
+);
+```
+
+  
 ### d. useContext 
 useContext hook allows components to access data without any rely on props
-### e. useMemo
-useMemo is a react hook, it returns a memoized value
-* usememo allows us to memoize expensive functions so that you can avoid calling them on every render
-* usememo cache the result of a calculation between re-renders
 
+### e,f. useMemo and useCallback
+```
+useMemo and useCallback are react hook and used for optimizing the application performance
+
+useMemo =>
+* useMemo Hook returns a memoized value.
+* useMemo Hook only runs when one of its dependencies update.
+
+useCallback=>
+* useMemo Hook returns a memoized funtion.
+* useCallback Hook only runs when one of its dependencies update.
+```
 
 ## 3. prop drilling
 It is a process of passing data from one component to another component ( parent to child and child to parent )
