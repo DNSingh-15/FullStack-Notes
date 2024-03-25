@@ -62,6 +62,7 @@ useContext hook allows components to access data without any rely on props
 ### e,f. useMemo and useCallback
 ```
 useMemo and useCallback are react hook and used for optimizing the application performance
+* useMemo and useCallback are used to stop unneccessory call or render
 
 useMemo =>
 * useMemo Hook returns a memoized value.
@@ -70,6 +71,8 @@ useMemo =>
 useCallback=>
 * useMemo Hook returns a memoized funtion.
 * useCallback Hook only runs when one of its dependencies update.
+
+learning => Technical Suneja youtube video
 ```
 
 ## 3. prop drilling
