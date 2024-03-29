@@ -34,7 +34,7 @@ const [count, setCount] = useState(0);
 const [count, setCount] = useState(0);
   useEffect(() => {
     document.title = `You clicked ${count} times`;
-  },[count);    ============>>>>>>>> it runs only when the count state 
+  },[count]);    ============>>>>>>>> it runs only when the count state 
 ```
 ### c. useRef
 * useRef is a hook it allows to continue values between renders. ( alternative useState is not working then we have to go with useRef )
