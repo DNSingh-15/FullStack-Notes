@@ -29,7 +29,7 @@ cindition rendering of useEffect
 const [count, setCount] = useState(0);
   useEffect(() => {
     document.title = `You clicked ${count} times`;
-  },[);     ============>>>>>>>> it runs only one time in the starting
+  },[]);     ============>>>>>>>> it runs only one time in the starting
 
 const [count, setCount] = useState(0);
   useEffect(() => {
