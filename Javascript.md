@@ -1,4 +1,4 @@
-## Javascript questions
+## Javascript
 js is an object-oriented programming language that is having a lot of applications. 
 
 advantages -
@@ -9,7 +9,23 @@ advantages -
 
 It can be used for both client-side as well as server-side
 
-### 1. difference between var, let & const
+### data Tyoes
+
+#### a. primitive
+Primitive data types are immutable and they store single values
+* do not have methods 
+* primitve are the basic data types
+example - string, number, boleaan, null, undefined, bigint and sysmbol
+
+#### b. non primitive 
+non-primitive data types are mutable and they store multiple values
+* primitve are the advance data types
+example - array and object
+
+
+## Javascript questions
+
+#### difference between var, let & const
 
 var => reassigned + redeclared
 ```
