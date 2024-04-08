@@ -110,10 +110,6 @@ jsx give us the power to write HTML and Javascript combined
 3. Server state => server state handles the server-side data introduced by the HTTP request
 4. URL state.
 
-### Methods 
-* useState  ``` const[data, setData] = useState(0) ```
-* useEffect ``` useEffect(() => { }) ```
-
 ## 9. events
 event is an action that could be triggered by button click, mouse hover etc
 
