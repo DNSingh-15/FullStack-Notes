@@ -211,7 +211,7 @@ getServerSideProps is used to fetch data at request time
 
 
 # Redux
-Redux is a state management library
+Redux is a state management javascript library
 * it has single store
 
 <img title="a title" alt="Alt text" src="https://www.clariontech.com/hs-fs/hubfs/Image3-43.png?width=417&name=Image3-43.png">
