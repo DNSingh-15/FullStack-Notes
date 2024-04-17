@@ -44,11 +44,45 @@ These are built-in functions to manipulate a string
       slice( startIdx, endIdx )
   * Splice( ) : change original array (add, remove, replace)
       ex => splice( startIdx, delCount, newEl1... )
+  * map => Creates a new array with the results of some operation.
+```
+arr.map( callbackFnx( value, index, array ) )
+
+let newArr = arr.map( ( val ) => {
+  return val * 2;
+ } )
+```
+  * Filter => Creates a new array of elements that give true for a condition/filter.
+```
+let newArr = arr.filter( ( ( val ) => {
+  return val % 2 === 0;
+})
+```
+  * Reduce => Performs some operations & reduces the array to a single value. It returns
+that single value.
+
+
+
+
+ 
+### Functions
+Block of code that performs a specific task,
+```
+function functionName( ) {                 const functionName = () => {
+ do some work                                  do some work
+}                                           }
+
+forEach Loop =>
+it is Callback Function to execute for each element in the array
+
+arr.forEach( ( val ) => {
+  console.log(val);
+})
+```
 
 
 
 ## Javascript questions
-
 #### 1. difference between var, let & const
 
 var => reassigned + redeclared
