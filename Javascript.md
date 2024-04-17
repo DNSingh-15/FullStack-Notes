@@ -9,7 +9,7 @@ advantages -
 
 It can be used for both client-side as well as server-side
 
-### data Tyoes
+### 1. data Tyoes
 
 #### a. primitive
 Primitive data types are immutable and they store single values
@@ -23,9 +23,33 @@ non-primitive data types are mutable and they store multiple values
 example - array and object
 
 
+### 2. string methods
+These are built-in functions to manipulate a string
+  * str.toUpperCase( )
+  * str.toLowerCase( )
+  * str.trim( ) // removes whitespaces
+  * str.slice(start, end?) // returns part of string
+  * str1.concat( str2 ) // joins str2 with str1
+  * str.replace( searchVal, newVal )
+  * str.charAt( idx )
+
+### 3. Array methods
+  * Push( ) : add to end
+  * Pop( ) : delete from end & return
+  * toString( ) : converts array to string
+  * Concat( ) : joins multiple arrays & returns result
+  * Unshift( ) : add to start
+  * shift( ) : delete from start & return
+  * Slice( ) : returns a piece of the array
+      slice( startIdx, endIdx )
+  * Splice( ) : change original array (add, remove, replace)
+      ex => splice( startIdx, delCount, newEl1... )
+
+
+
 ## Javascript questions
 
-#### difference between var, let & const
+#### 1. difference between var, let & const
 
 var => reassigned + redeclared
 ```
