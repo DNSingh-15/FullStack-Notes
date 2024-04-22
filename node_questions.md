@@ -2,7 +2,10 @@
 
 node.s is a javascript run time environment
 * runtime environment allows the source code to interact with the operating system.
-* it converts js code into machine code 
+* it converts js code into machine code
+
+### how node.js works
+![node architechture](node.png)
  
 ### 1. Body Parser, params & query
 #### Body Parser
