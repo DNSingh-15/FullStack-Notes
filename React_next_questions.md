@@ -16,7 +16,7 @@ props are argument passed into react component and it is data transfer method
 
 ## 2. Hooks
 Hooks are state and lifecycle methods in functional component.
-* it is introduced in react 18 update
+* it is introduced in react 16 update
 ### a. useState
 useState is a hook that allows to store and manage data
 * state is mutable
