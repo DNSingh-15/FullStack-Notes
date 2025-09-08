@@ -217,6 +217,19 @@ Strict mode is a way to introduce better error-checking
 
 
 
+### 16. Shallow Copy and Deep Copy
+Shallow Copy --- Copies only the first level of properties. not Nested objects.
+Deep Copy --- Copies all levels of properties 
+```
+const obj = { a: 1, b: { c: 2 } };
 
+const shallow = { ...obj };
+shallow.b.c = 100;
+console.log(obj.b.c);
+
+const deep = structuredClone(obj);
+deep.b.c = 200;
+console.log(obj.b.c); 
+```
 
 
