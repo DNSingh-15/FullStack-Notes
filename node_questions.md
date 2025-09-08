@@ -5,7 +5,8 @@ node.s is a javascript run time environment
 * it converts js code into machine code
 
 ### how node.js works
-![node architechture](node.png)
+![node architechture](./images/node.webp)
+![node architechture](./images/node1.png)
  
 ### 1. Body Parser, params & query
 #### Body Parser
@@ -46,6 +47,7 @@ it is A kind of set of functions that we want to include in your application wit
 3. url
 4. query string
 5. stream
+6. cluster
 
 ### 5. Why is Node.js over Java and PHP etc
 1. Node.js is very fast
@@ -68,14 +70,13 @@ package.json is a file that contains all the dependencies
 
 it will automatic generated with ```npm init``` cmd
 
-### 9. streams
-Streams are objects that enable read or write data continuously.
-
-types
-1 Readable – Used for reading operations
-2 Writable − Used for write operations
-3 Duplex − Can be used for both reading and write operations
-4 Transform − A type of duplex stream where the output is computed based on input
+### 9. HTTP Request
+1. Get
+2. Put
+3. Post
+4. Delete
+5. Patch
+6. options
 
 ### 10. install, update, and delete a dependency
 
@@ -97,13 +98,14 @@ It is a communication channel between two process
 
 used for the writing and reading stream
 
+### 13. streams
+Streams are objects that enable read or write data continuously.
 
-### 13. HTTP Request
-1. Get
-2. Put
-3. Post
-4. Delete
-5. options
+types
+1 Readable – Used for reading operations
+2 Writable − Used for write operations
+3 Duplex − Can be used for both reading and write operations
+4 Transform − A type of duplex stream where the output is computed based on input
 
 ### 14. Bufeers
 Buffers are temporary memory that is mainly used by stream to hold some data until it's consumed.
@@ -112,9 +114,31 @@ Buffers are temporary memory that is mainly used by stream to hold some data unt
 1. alloc() => ```var buf = Buffer.alloc(15)```
 2. form() => ```var buf = Buffer.from('abc')```
 
+### 15. Cluster and workers
+A cluster is a group of computers (or servers) that are connected and work together
+
+1. it is used for scalability of the application
+
+```
+Example -
+1. One computer = 100 people can use it.
+2. A cluster of 10 computers = 1,000 people can use it at the same time.
+```
+| ![node architecture](./images/cluster.png) | ![node architecture](./images/cluster1.png) |
+|--------------------------------------------|--------------------------------------------|
 
 
-
-
+### spawn and fork
+```
+Parent Process
+    |
+    |--- spawn("ls")
+    |         ↳ Runs system command
+    |         ↳ No message passing
+    |
+    |--- fork("child.js")
+              ↳ Runs Node.js script
+              ↳ Has IPC channel (send/receive messages)
+```
 
 
