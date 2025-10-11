@@ -128,7 +128,7 @@ Example -
 |--------------------------------------------|--------------------------------------------|
 
 
-### spawn and fork
+### 16. spawn and fork
 ```
 Parent Process
     |
@@ -140,5 +140,17 @@ Parent Process
               ↳ Runs Node.js script
               ↳ Has IPC channel (send/receive messages)
 ```
+
+### 17. Transaction
+transaction is a sequence of database operations (like INSERT, UPDATE, DELETE) that are treated as a single logical work.
+
+That means:
+
+Either all the operations succeed ✅
+or none of them happen ❌.
+
+
+
+
 
 
