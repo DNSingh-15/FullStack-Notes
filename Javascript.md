@@ -1,30 +1,41 @@
-## Javascript
+# 🟨 JavaScript Notes
+
 js is an object-oriented programming language that is having a lot of applications. 
 
-advantages -
-* Less server interaction
-* Immediate feedback
-* Richer interfaces
-* high performance
+---
+
+## 🚀 Advantages of JavaScript
+- Less server interaction  
+- Immediate feedback  
+- Richer user interfaces  
+- High performance  
+- Cross-platform compatibility  
+
+---
 
 It can be used for both client-side as well as server-side
 
-### 1. data Tyoes
+## 🧩 1. Data Types
 
-#### a. primitive
-Primitive data types are immutable and they store single values
-* do not have methods 
-* primitve are the basic data types
-example - string, number, boleaan, null, undefined, bigint and sysmbol
+### 🟢 a. Primitive Data Types
+Primitive data types are **immutable** and store **single values**.  
+They **do not have methods** and are **copied by value**.
 
-#### b. non primitive 
-non-primitive data types are mutable and they store multiple values
-* primitve are the advance data types
-example - array and object
+**Examples:**  
+`string`, `number`, `boolean`, `null`, `undefined`, `bigint`, `symbol`
+
+### 🟢 b. Non-Primitive Data Types
+Non-primitive types are **mutable** and store **multiple values**.  
+They are **copied by reference**.
+
+**Examples:**  
+`object`, `array`, `function`
+
+---
 
 
-### 2. string methods
-These are built-in functions to manipulate a string
+## 🔠 2. String Methods
+Commonly used string manipulation methods:
   * str.toUpperCase( )
   * str.toLowerCase( )
   * str.trim( ) // removes whitespaces
@@ -33,203 +44,326 @@ These are built-in functions to manipulate a string
   * str.replace( searchVal, newVal )
   * str.charAt( idx )
 
-### 3. Array methods
-  * Push( ) : add to end
-  * Pop( ) : delete from end & return
-  * toString( ) : converts array to string
-  * Concat( ) : joins multiple arrays & returns result
-  * Unshift( ) : add to start
-  * shift( ) : delete from start & return
-  * Slice( ) : returns a piece of the array
-      slice( startIdx, endIdx )
-  * Splice( ) : change original array (add, remove, replace)
-      ex => splice( startIdx, delCount, newEl1... )
-  * map => Creates a new array with the results of some operation.
-```
-arr.map( callbackFnx( value, index, array ) )
 
-let newArr = arr.map( ( val ) => {
-  return val * 2;
- } )
-```
-  * Filter => Creates a new array of elements that give true for a condition/filter.
-```
-let newArr = arr.filter( ( ( val ) => {
-  return val % 2 === 0;
-})
-```
-  * Reduce => Performs some operations & reduces the array to a single value. It returns
-that single value.
+---
 
+## 🧮 3. Array Methods
+| Method | Description |
+|--------|--------------|
+| `push()` | Add to end |
+| `pop()` | Remove from end |
+| `unshift()` | Add to start |
+| `shift()` | Remove from start |
+| `toString()` | Converts array to string |
+| `concat()` | Joins multiple arrays |
+| `slice(start, end)` | Returns a shallow copy |
+| `splice(start, deleteCount, ...items)` | Modifies array by adding/removing elements |
 
+### 🔹 Higher-Order Methods
+```js
+// map
+let doubled = arr.map(val => val * 2);
 
+// filter
+let evens = arr.filter(val => val % 2 === 0);
 
- 
-### Functions
-Block of code that performs a specific task,
-```
-function functionName( ) {                 const functionName = () => {
- do some work                                  do some work
-}                                           }
+// reduce
+let sum = arr.reduce((acc, val) => acc + val, 0);
 
-forEach Loop =>
-it is Callback Function to execute for each element in the array
-
-arr.forEach( ( val ) => {
-  console.log(val);
-})
+// forEach
+arr.forEach(val => console.log(val));
 ```
 
+---
 
 
-## Javascript questions
-#### 1. difference between var, let & const
 
-var => reassigned + redeclared
-```
-var a = 5,
-var a = 10
-```
+## ⚙️ 4. Functions
+A function is a block of reusable code that performs a specific task.
 
-let => reassigned + non-redeclared
-```
-let a = 5,
-  a = 10
-```
-
-cont => non-reassigned + non-redeclared
-```
-const a = 5
-```
-### 2. difference between == , ===
-```
-==  => it compares only value
-=== => compare value as well as data type
-```
-
-### 3. Promises, callback functions, async Await
-#### Promises
-* promises represents that is something eventually fullfilled
-* promises are used to handle the asynchronous operations
-1. promises provide more elegant way
-
-types
-1. Reject
-2. resolve 
-3. pending
-
-#### callback
-* callback is a function that passed into another function as a parameter
-* callback is also used to handle the asynchronous operations
-1. callback is a tradition way
-
-#### async Await
-* async Await is also used to handle the asynchronous operations
-* async Await allows us to execute our flows without blocking our application
-1. async Await provides more convenient and readable way
-
-### 4. callback hell
-Nested callbacks is call back hell
-* it is unreadable and difficult to manage the code
-* callback hell can be avoided by using the Promises and async / await
-
-### 5. Hoisting
-Hoisting is JavaScript's default behavior for use functions & variables before they're declared
-* it host only declaration and initialization
-
-### 6. Generator function 
-generator function is a such type of function that we can pause and resume with the using of yield
-* 
-Generator Functions are memory efficient, they save a lot of memory
-
-### 7. closure
-closure is a function where an inner function has access to the outer function's variables and arguments
-
-```
-function greeting() {
-    let message = 'Hi';
-
-    function sayHi() {
-        console.log(message);
-    }
-    sayHi();
+```js
+// Function Declaration
+function greet() {
+  console.log("Hello");
 }
-greeting();
+
+// Arrow Function
+const greet = () => console.log("Hello");
 ```
 
-### 8. new features in ES6 (ECMAScript)
-1. let
-2. const
-3. Arrow Functions
-4. For/of
-5. Classes
-6. Map Objects
+### 🔸 Callback Function
+A **callback** is a function passed into another function to be executed later.
 
-### 9. event loop
-event loop is a mechanism that allows the runtime to execute tasks asynchronously
-
-### 10. Global variable and local variable and their scope
-variable that declared outside of the function is Global variable
-
-* we can define it using => var, let and const
-* it can be accessed anywhere in the program
-
-variable that declared inside of the function is local variable
-
-
-### 11. Session State and the View State
-Session state is saved on the server, ViewState is saved in the page
-* in Session State have access all pages within a web application
-* ViewState is used for accessing a session only
-
-### 12. Is JavaScript a case-sensitive language
-Yes, here for keywords, variables, function names,we are using consistent capitalization of letters.
-
-### 13. cookie
-cookie is an amount of user information in web pages
-* user information data stored our computer
-
-When a web server has sent a web page to a browser, the connection is shut down, and the server forgets everything about the user
-so for that we are using the cookie
-* When a user visits a web page, his/her name can be stored in a cookie.
-* Next time the user visits the page, the cookie "remembers" his/her name.
-
-#### Create a Cookie
-
+```js
+function fetchData(callback) {
+  setTimeout(() => {
+    callback("Data received");
+  }, 1000);
+}
 ```
+
+---
+
+## 🧠 5. Important JavaScript Concepts
+
+### 🔹 var, let, const
+| Keyword | Reassign | Redeclare | Scope |
+|----------|-----------|------------|--------|
+| var | ✅ | ✅ | Function |
+| let | ✅ | ❌ | Block |
+| const | ❌ | ❌ | Block |
+
+---
+
+### 🔹 == vs ===
+```js
+==   // compares only value
+===  // compares value + type
+```
+
+---
+
+### 🔹 Hoisting
+Hoisting is JavaScript's behavior of moving **declarations to the top** of their scope.
+```js
+console.log(x); // undefined
+var x = 10;
+```
+> Only declarations are hoisted, not initializations.
+
+---
+
+### 🔹 Closures
+closure is a function where an ***inner function*** has access to the ***outer function's*** variables and arguments, even after the outer function has executed.
+
+```js
+function greeting() {
+  let message = 'Hi';
+  return function sayHi() {
+    console.log(message);
+  };
+}
+const hi = greeting();
+hi(); // Hi
+```
+
+---
+
+### 🔹 Prototype
+Every JavaScript object has a hidden property called **[[Prototype]]**, which points to another object — the **prototype**.
+
+It enables **inheritance** and **method sharing**.
+
+```js
+function Person(name) {
+  this.name = name;
+}
+Person.prototype.sayHi = function() {
+  console.log(`Hi, I'm ${this.name}`);
+};
+
+const user = new Person('John');
+user.sayHi(); // Hi, I'm John
+```
+
+---
+
+### 🔹 Currying
+**Currying** transforms a function with multiple arguments into a sequence of functions, each taking one argument.
+
+```js
+function add(a) {
+  return function(b) {
+    return function(c) {
+      return a + b + c;
+    };
+  };
+}
+
+console.log(add(1)(2)(3)); // 6
+```
+
+---
+
+### 🔹 Callback, Promise & Async/Await
+
+#### ✅ Callback
+Old way to handle async operations.
+```js
+setTimeout(() => console.log("Task done"), 1000);
+```
+
+#### ✅ Promise
+More elegant way to handle async logic.
+```js
+const promise = new Promise((resolve, reject) => {
+  resolve("Success");
+});
+promise.then(console.log).catch(console.error);
+```
+
+#### ✅ Async/Await
+Cleaner syntax built on Promises.
+```js
+async function getData() {
+  const res = await fetch("url");
+  console.log(await res.json());
+}
+```
+
+---
+
+### 🔹 Callback Hell
+Nested callbacks cause unreadable code.
+Avoid using **Promises** or **Async/Await** instead.
+
+---
+
+### 🔹 Generator Function
+Functions that can be **paused and resumed** using the `yield` keyword.
+```js
+function* generator() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+for (let val of generator()) console.log(val);
+```
+
+---
+
+### 🔹 Event Loop
+The **Event Loop** allows JavaScript to perform **asynchronous operations** — by managing the **call stack** and **callback queue**.
+
+---
+
+### 🔹 Execution Context
+When JavaScript code runs, an **Execution Context** is created which contains:
+1. **Variable Environment**
+2. **Scope Chain**
+3. **This Binding**
+
+---
+
+### 🔹 Event Delegation
+Instead of attaching event listeners to multiple elements, we attach it to a **parent element** and use **event bubbling** to catch events.
+
+```js
+document.getElementById("list").addEventListener("click", (e) => {
+  if (e.target.tagName === "LI") console.log("Item clicked");
+});
+```
+
+---
+
+## 💾 6. Storage & Cookies
+
+### 🍪 Cookies
+Small pieces of user data stored in the browser.
+```js
 document.cookie = "username=John Doe";
 ```
 
-### 14. Local storage & Session storage
-both are browser storage
-#### Local storage
-Local storage allows you to store data in the browser and there is no expiration date until it's deleted manually.
-* data is not sent back to the server for every HTTP request
-
-#### Session storage
-Session storage allows you to store data in the browser and the data is stored until the browser is closed.
-
-
-### 15. ‘Strict’ mode
-Strict mode is a way to introduce better error-checking
-* during strict mode, we cannot implicitly declared variables, or assign a value to a read-only property etc.
-* we can enable strict mode by adding “use strict” at top of the code
-
-
-
-### 16. Shallow Copy and Deep Copy
-Shallow Copy --- Copies only the first level of properties. not Nested objects.
-Deep Copy --- Copies all levels of properties 
+### 🗂️ Local Storage
+Persistent storage in the browser (no expiration).
+```js
+localStorage.setItem("name", "John");
 ```
+
+### 📁 Session Storage
+Temporary storage, cleared when browser closes.
+```js
+sessionStorage.setItem("token", "abc123");
+```
+
+--- 
+
+## 🔒 7. Strict Mode
+Enables stricter parsing and error handling.
+
+```js
+"use strict";
+x = 10; // ❌ Error (variable not declared)
+```
+
+---
+
+## 📤 8. Copy Types
+
+- **Shallow Copy:** Copies only top-level properties.
+- **Deep Copy:** Copies nested objects too.
+```js
 const obj = { a: 1, b: { c: 2 } };
 
+// Shallow Copy
 const shallow = { ...obj };
-shallow.b.c = 100;
-console.log(obj.b.c);
+shallow.b.c = 100; // affects original
 
+// Deep Copy
 const deep = structuredClone(obj);
-deep.b.c = 200;
-console.log(obj.b.c); 
+deep.b.c = 200; // independent
 ```
 
+---
 
+
+## 🆕 9. ES6 Features
+1. `let` and `const`  
+2. Arrow Functions  
+3. Template Literals  
+4. Default Parameters  
+5. Destructuring  
+6. Spread & Rest Operators  
+7. Classes  
+8. Promises  
+9. Modules (`import` / `export`)  
+10. Map & Set objects  
+
+---
+
+
+---
+
+### 10. Debouncing & Throttling
+
+- **Debouncing:** Ensures a function runs **only after a delay** since the last event call.
+- **Throttling:** Limits how often a function can be executed in a given time.
+
+```js
+function debounce(fn, delay) {
+  let timeout;
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => fn(...args), delay);
+  };
+}
+```
+```js
+function throttle(fn, limit) {
+  let lastCall = 0;
+  return (...args) => {
+    const now = Date.now();
+    if (now - lastCall >= limit) {
+      lastCall = now;
+      fn(...args);
+    }
+  };
+}
+```
+
+---
+
+### 11. Higher-Order Functions
+Functions that **take other functions as arguments or return functions**.
+
+```js
+function higherOrder(fn) {
+  fn();
+}
+```
+
+---
+
+### 12. Composition vs Inheritance
+- **Composition:** Combining simple functions or objects to build complex ones.
+- **Inheritance:** Acquiring properties/methods from another object.
