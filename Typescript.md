@@ -1,4 +1,4 @@
-# TypeScript Notes (Simplified for 4–5 Years Experience)
+# TypeScript Notes
 
 ## 🧠 Overview
 
