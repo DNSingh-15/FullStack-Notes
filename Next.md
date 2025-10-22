@@ -150,5 +150,3 @@ import Head from "next/head";
 | When | Every request | Build time |
 | Freshness | Always updated | Static (can use ISR) |
 | Use case | Dashboard, user data | Blogs, marketing pages |
-
----

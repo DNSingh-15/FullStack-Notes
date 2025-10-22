@@ -1,6 +1,6 @@
-## Node.js questions
+# ⚡ Node.js Notes
 
-node.s is a javascript run time environment
+node.s is a **JavaScript runtime environment** 
 * runtime environment allows the source code to interact with the operating system.
 * it converts js code into machine code
 
