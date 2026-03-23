@@ -39,13 +39,23 @@ setCount(count + 1);
 
 ### 🔹 useEffect
 * UseEffect is a hook it's just like a function it runs on any render.
-* Handles side effects like API calls, DOM updates.
+* used for Handles side effects like API calls, DOM updates.
+* support dependency array + cleanup
 
 ```tsx
 useEffect(() => {
   console.log("Component mounted");
 }, []); // runs once
 ```
+
+### 🔹 useLayoutEffect
+* useLayoutEffect is just like useEffect, but it runs earlier
+* used for Handles side effects like API calls, DOM updates.
+* support dependency array + cleanup
+
+### Key Difference useLayoutEffect and useEffect ----
+* useEffect → runs after UI is mounted (non-blocking)
+* useLayoutEffect → runs before UI is mounted (blocking)
 
 ### 🔹 useRef
 * UseRef is a hook it allows to continue values between renders. ( alternative useState is not working then we have to go with useRef )
@@ -188,3 +198,22 @@ Used to group multiple elements without adding extra DOM nodes.
   <ChildB />
 </>
 ```
+
+## 🧨 Memory Leaks
+A memory leak happens when unused resources are not cleaned up.
+### 🚨 Common Causes
+1. Uncleaned subscriptions → Listeners (like WebSocket, event listeners) keep running even after component is removed.
+2. setInterval / setTimeout → Timers continue executing in background if not cleared on unmount.
+3. API calls after component unmount → Response tries to update state after component is gone, causing warnings/memory issues.
+
+## 🔁 
+* Reconciliation is React’s process of updating the UI
+* It compares old Virtual DOM vs new Virtual DOM
+
+## ⚖️ Debouncing & Throttling
+
+| Feature    | Debouncing        | Throttling            |
+|------------|------------------|------------------------|
+| Execution  | After delay      | At intervals           |
+| Trigger    | After stop       | During action          |
+| Use case   | Search input     | Scroll events          |
