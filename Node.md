@@ -165,34 +165,84 @@ Buffer.from("Hello");
 ---
 
 
-## 🧩 Cluster vs 🧵 Worker Threads vs 🔄 fork()
+## 🧩 Cluster vs 🧵 Worker Threads vs 🔄 process
 
 👉 **Cluster** → Handle more users  
 👉 **Worker Threads** → Handle heavy tasks  
-👉 **fork()** → Handle separate background jobs  
+👉 **process** → it is a running program ( and inside process we have threads → responsible for executing the heavy task )
 
-## 📌 Real-Life Examples
+```js
+                        ┌────────────────────────────┐
+                        │       Client Requests      │
+                        │   (Users / Browser / API)  │
+                        └────────────┬───────────────┘
+                                     │
+                                     ▼
+                        ┌────────────────────────────┐
+                        │     Master Process         │
+                        │     (Cluster Manager)      │
+                        │  - Runs on single port     │
+                        │  - Distributes requests    │
+                        │  - Acts like Load Balancer │
+                        └────────────┬───────────────┘
+                                     │
+        ┌────────────────────────────┼────────────────────────────┐
+        │                            │                            │
+        ▼                            ▼                            ▼
+┌──────────────────┐      ┌──────────────────┐      ┌──────────────────┐
+│ Child Process 1  │      │ Child Process 2  │      │ Child Process N  │
+│ (Worker)         │      │ (Worker)         │      │ (Worker)         │
+│ - Node.js app    │      │ - Node.js app    │      │ - Node.js app    │
+│ - Own memory     │      │ - Own memory     │      │ - Own memory     │
+│ - Own event loop │      │ - Own event loop │      │ - Own event loop │
+└──────────────────┘      └──────────────────┘      └──────────────────┘
+        │                            │                            │
+        └────────────── Handles requests in parallel ─────────────┘
+```
 
-### 🧩 Cluster (Scaling)
-👉 Example: E-commerce website  
-- 10,000 users hitting API  
-- Use cluster to utilize all CPU cores  
+```js
+                           ┌────────────────────────────┐
+                           │      Node.js Process       │
+                           │  (Your Running App)        │
+                           │  - Single JS Thread        │
+                           │  - One Memory Space        │
+                           └────────────┬───────────────┘
+                                        │
+        ┌───────────────────────────────┼───────────────────────────────┐
+        │                               │                               │
+┌───────▼────────┐             ┌────────▼────────┐              ┌────────▼──────────┐
+│  Event Loop    │             │     libuv       │              │ Worker Threads     │
+│ (Main Thread)  │             │ (C++ Engine)    │              │ (Inside Process)   │
+└───────┬────────┘             └────────┬────────┘              └────────┬──────────┘
+        │                               │                                │
+Handles async work              Uses Thread Pool                  Parallel JS threads
+(API, DB, timers)              (FS, DNS, I/O)                    (CPU tasks)
+        │                               │                                │
+        │                        ┌──────▼───────┐                        │
+        │                        │ Thread Pool  │                        │
+        │                        │ (4 threads)  │                        │
+        │                        └──────────────┘                        │
+        │                                                ┌──────────────▼──────────────┐
+        │                                                │ Shared Memory (Same Process)│
+        ▼                                                └─────────────────────────────┘
+┌──────────────────────────────┐
+│       Child Processes        │
+│   (Separate OS Processes)    │
+│   - New Memory (No sharing)  │
+│   - Isolation                │
+└──────────────┬───────────────┘
+               │
+     ┌─────────┼───────────────┐
+     │         │               │
+┌────▼────┐ ┌──▼─────┐ ┌──────▼────────┐
+│ spawn() │ │ exec() │ │  fork()       │
+└─────────┘ └────────┘ └───────────────┘
 
----
+spawn() → create child process (run any OS command, stream data)
+exec()  → create child process (run command, buffer output)
+fork()  → create child process (Node.js only + IPC communication)
 
-### 🧵 Worker Threads (Heavy Task)
-👉 Example: Image processing / data calculation  
-- Avoid blocking main thread  
-- Run task in parallel  
-
----
-
-### 🔄 fork() (Background Jobs)
-👉 Example: Sending emails / cron jobs  
-- Run separate JS file  
-- Doesn’t block main app  
-
----
+```
 
 
 ## 🔄 Transactions
