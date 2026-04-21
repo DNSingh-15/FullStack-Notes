@@ -290,18 +290,26 @@ x = 10; // ❌ Error (variable not declared)
 
 ## 📤 8. Copy Types
 
-- **Shallow Copy:** Copies only top-level properties.
-- **Deep Copy:** Copies nested objects too.
+### 🔹 Shallow Copy
+- Shallow copy copies only top-level values.
+- it copies the reference (memory address), not the actual data.
+
+### 🔹 Deep Copy
+- creates new reference (new address)
+- Nested objects are fully separate
+
 ```js
 const obj = { a: 1, b: { c: 2 } };
 
 // Shallow Copy
 const shallow = { ...obj };
-shallow.b.c = 100; // affects original
+shallow.b.c = 100;
+console.log(obj.b.c); // 100 ❗ (original changed)
 
 // Deep Copy
 const deep = structuredClone(obj);
-deep.b.c = 200; // independent
+deep.b.c = 200;
+console.log(obj.b.c); // 2 ✅ (original unchanged)
 ```
 
 ---
