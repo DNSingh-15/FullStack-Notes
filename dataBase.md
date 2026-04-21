@@ -136,6 +136,29 @@ PARTITION BY RANGE (created_at);
 
 ---
 
+# ⚡ Quick Differences
+- **Sharding** → splitting a large database into smaller parts and storing them on different servers.
+* 👉 Used when data is too large for a single DB  
+* 👉 Each server handles only a portion of data (horizontal scaling)*
+
+- **Replication** → copying the same data to multiple servers.
+* 👉 Used for high availability and read scaling  
+* 👉 One primary (write), multiple replicas (read)
+
+- **Partitioning** → splitting a table into smaller parts within the same database.
+* 👉 Improves performance for large datasets  
+* 👉 Queries scan only relevant partitions instead of full table
+
+- **Indexing** → Create a fast lookup structure  
+* 👉 Speeds up SELECT queries  
+* 👉 Works like a book index to quickly find data
+
+- **Caching** → Store frequently used data in memory  
+* 👉 Reduces database load  
+* 👉 Faster response (e.g., using Redis)
+
+---
+
 # 🔧 11. Connection Pooling
 
 * Use PgBouncer
@@ -144,10 +167,4 @@ PARTITION BY RANGE (created_at);
 
 > “Pooling prevents connection overhead in Node.js apps.”
 
----
-
-# 💾 12. Backup
-
-* pg_dump
-* WAL → PITR
 
