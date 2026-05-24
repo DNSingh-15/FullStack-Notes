@@ -64,14 +64,15 @@ Embeddings convert text into vectors for semantic understanding.
 
 # 🔍 Embedding Models & Techniques
 
-| Model / Technique             | Type             | Best Use                   |
-| ----------------------------- | ---------------- | -------------------------- |
-| OpenAI text-embedding-3-small | Dense Embedding  | Fast semantic search       |
-| OpenAI text-embedding-3-large | Dense Embedding  | High-accuracy retrieval    |
-| BGE-large                     | Dense Embedding  | Enterprise RAG             |
-| E5-large                      | Dense Embedding  | Multi-language retrieval   |
-| BM25                          | Sparse Embedding | Keyword search             |
-| Hybrid Search                 | Dense + Sparse   | Better ranking & retrieval |
+| Model / Technique | Type | Best Use | Disadvantage |
+|-------------------|------|-----------|--------------|
+| OpenAI text-embedding-3-large | Dense Embedding | High-accuracy semantic retrieval for production RAG | Higher cost and slower |
+| OpenAI text-embedding-3-small | Dense Embedding | Fast and affordable semantic search | Lower accuracy than large models |
+| BGE-large | Dense Embedding | Enterprise-level RAG and retrieval tasks | Requires higher compute resources |
+| Hybrid Search | Dense + Sparse | Combines keyword + semantic search for better retrieval | More complex setup and tuning |
+| Word2Vec | Dense Embedding | Basic word similarity and NLP learning | No contextual understanding |
+
+
 
 ---
 
