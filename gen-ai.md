@@ -1,203 +1,391 @@
-# 🤖 Generative AI (Gen-AI)
+# 🚀 Generative AI
 
-## 📌 What is Gen-AI?
+## Overview
 
-Generative AI (Gen-AI) is Artificial Intelligence that can generate:
+GenAI is a system that generates human-like responses
 
-* 📝 Text
-* 🖼️ Images
-* 🎵 Audio
-* 🎥 Video
-* 💻 Code
+### Core Components
 
-It learns patterns from large datasets and generates human-like outputs.
-
-### 🚀 Examples
-
-* ChatGPT
-* Claude
-* Gemini
-* GitHub Copilot
+* 📄 Document Processing
+* ✂️ Chunking
+* 🔍 Embeddings
+* 🗂️ Vector Databases
+* 🧠 Retrieval-Augmented Generation (RAG)
+* ⚡ Agent Orchestration
+* 💾 Memory Systems
 
 ---
 
-# 🧠 Core Components
+# Part 1: Knowledge Ingestion Step
 
-## 1️⃣ Large Language Model (LLM)
+This stage prepares documents for semantic search by converting them into embeddings and storing them in a vector database.
 
-The brain of the AI system.
+## End-to-End Flow
 
-### 🎯 Purpose
+```text
+Documents ( PDF / DOCX / PPTX / XLSX )
+    ↓
+Document Processing
+    ↓
+Chunking
+    ↓
+Embedding Generation
+    ↓
+Vector Database Storage
+```
 
-* Understand queries
-* Generate responses
-* Perform reasoning
 
-### 🚀 Popular Models
+## 1. Document Processing
 
-* GPT-4 / GPT-5
-* Claude
-* Gemini
-* Llama 3
+### Definition
+
+The process of collecting and reading enterprise documents before they are used by AI systems.
+
+### Purpose
+
+* Extract business knowledge data
+* Prepare data for chunking and embeddings
+
+
+## 📄 Common Document Type | Chunking Strategy | Purpose
+
+| Document Type      | Chunking Strategy             | Purpose                                      |
+| ------------------ | ----------------------------- | -------------------------------------------- |
+| PDF                | Semantic / Recursive Chunking | Preserve sections and document hierarchy     |
+| Word (.docx)       | Semantic Chunking             | Keep related content and procedures together |
+| PowerPoint (.pptx) | Slide-Based Chunking          | Treat each slide as an independent chunk     |
+| Excel (.xlsx)      | Table / Row Chunking          | Retrieve structured records efficiently      |
 
 ---
 
-## 2️⃣ Embeddings
+## 2. Chunking
 
-Embeddings convert text into vectors for semantic understanding.
+### Definition
 
-### 🎯 Purpose
+Chunking is the process of splitting large documents into smaller pieces before generating embeddings.
 
-* Semantic Search
-* Similarity Matching
-* Knowledge Retrieval
+* Why Chunking? ===>> because LLMs cannot efficiently process very large documents directly.
 
-### 🧾 Example
+---
+
+## 3. Embeddings
+
+### Definition
+
+Embeddings convert text into numerical vectors that capture semantic meaning.
+
+### Example
 
 ```text
 "Pipeline corrosion issue"
+
 ↓
-[0.23, -0.11, 0.89, ...]
+
+[0.34, -0.18, 0.92, ...]
 ```
 
----
+### Purpose
 
-# 🔍 Embedding Models & Techniques
-
-| Model / Technique | Type | Best Use | Disadvantage |
-|-------------------|------|-----------|--------------|
-| OpenAI text-embedding-3-large | Dense Embedding | High-accuracy semantic retrieval for production RAG | Higher cost and slower |
-| OpenAI text-embedding-3-small | Dense Embedding | Fast and affordable semantic search | Lower accuracy than large models |
-| BGE-large | Dense Embedding | Enterprise-level RAG and retrieval tasks | Requires higher compute resources |
-| Hybrid Search | Dense + Sparse | Combines keyword + semantic search for better retrieval | More complex setup and tuning |
-| Word2Vec | Dense Embedding | Basic word similarity and NLP learning | No contextual understanding |
-
-
+Allows machines to understand meaning instead of exact keywords.
 
 ---
 
-# ✂️ Chunking Techniques
+## Popular Embedding Models
 
-Before embeddings, documents are split into chunks.
-
-| Technique          | Purpose                |
-| ------------------ | ---------------------- |
-| Fixed Chunking     | Split by token size    |
-| Semantic Chunking  | Split by meaning       |
-| Recursive Chunking | Hierarchical splitting |
-
----
-
-## 3️⃣ Vector Database
-
-Stores embeddings for semantic retrieval.
-
-### 🚀 Popular Vector DBs
-
-* Pinecone
-* ChromaDB
-
-### 💡 Use Case
-
-Find related documents using meaning instead of keywords.
+| Model                         | Use                   |
+| ----------------------------- | --------------------- |
+| OpenAI text-embedding-3-large | High accuracy         |
+| OpenAI text-embedding-3-small | Cost efficient        |
+| BGE-large                     | Enterprise RAG        |
+| E5 Models                     | Open-source retrieval |
 
 ---
 
-## 4️⃣ Retrieval-Augmented Generation (RAG)
+## 4. Vector Database
 
-RAG combines:
+### Definition
 
-* Retrieval
-* LLM reasoning
+A database for storing and searching embeddings.
 
-### 🔄 Flow
+### Purpose
+
+Retrieve semantically similar content.
+
+### Popular Vector Databases
+
+| Vector DB | Use |
+|-----------|-----|
+| PostgreSQL + pgvector | Vector search + relational database in one system |
+| SQL Server + Vector Search | Vector search + enterprise relational database in one system |
+| Pinecone | Fully managed vector database for production RAG |
+| ChromaDB | Lightweight and developer-friendly for local projects |
+
+---
+
+
+# Part 2:  User Prompt ( Query ) Processing & Answer Generation Steps
+
+This stage handles user questions and generates intelligent responses.
+
+---
+
+## End-to-End Flow
 
 ```text
 User Query
-   ↓
-Retrieve Context
-   ↓
-Send to LLM
-   ↓
-Generate Answer
+    ↓
+Query Understanding
+    ↓
+System Prompt
+    ↓
+Query Rewriting/building
+    ↓
+Query Embedding
+    ↓
+Vector Search
+    ↓
+Top-N Retrieval
+    ↓
+Context Building
+    ↓
+LLM ( Answer Generation )
+    ↓
+Final Response
 ```
-
-### ✅ Benefits
-
-* Reduces hallucination
-* Uses enterprise knowledge
-* Provides grounded answers
 
 ---
 
-## 5️⃣ Knowledge Graph
+## 1. User Query
 
-Knowledge Graphs represent relationships between entities.
+### Definition
 
-### 🧾 Example
+The question entered by the user.
+
+### Example
 
 ```text
-Pipeline A → Located In → Region B
-Pipeline A → Connected To → Valve C
+Explain the concept of machine learning.
 ```
 
 ---
 
-# 🌐 Graph Functionalities
+## 2. Query Understanding
 
-| Functionality          | Purpose                           |
-| ---------------------- | --------------------------------- |
-| Relationship Traversal | Navigate connected entities       |
-| Multi-hop Reasoning    | Understand indirect relationships |
-| Dependency Mapping     | Track connected systems           |
-| Recommendation Engine  | Suggest related knowledge         |
+### Definition
 
-### 🚀 Popular Graph DBs
+Analyze user intent and extract key information.
 
-* Neo4j
-* Amazon Neptune
+### Purpose
 
----
+Identify:
 
-# 🏗️ Enterprise AI Flow
+* User intent
+* Entities
+* Context
+* Domain
+
+### Example
 
 ```text
-User Query
-   ↓
-Agent Layer
-   ↓
-Pinecone (Semantic Search)
-   ↓
-Neo4j (Graph Traversal)
-   ↓
-Redis (Memory Context)
-   ↓
-PostgreSQL (Metadata)
-   ↓
-LLM Reasoning
-   ↓
-Final AI Response
+Explain the concept of machine learning.
+```
+
+Intent:
+
+```text
+Concept Explanation
+```
+
+Entity:
+
+```text
+Machine Learning
+```
+
+Context:
+
+```text
+Learning
+```
+
+Domain:
+
+```text
+Artificial Intelligence
 ```
 
 ---
 
-### 🚀 Frameworks
+## 3. System Prompt
 
-* LangGraph
-* CrewAI
-* AutoGen
+### Definition
+
+Instructions that guide how the AI should behave and respond.
+
+### Purpose
+
+Ensures consistent, accurate, and safe responses.
+
+### Example
+
+```text
+You are an AI tutor.
+Provide clear and beginner-friendly explanations.
+Answer only using the retrieved context.
+```
 
 ---
 
-# 🚀 Summary
+## 4. Query Rewriting / Query Building
 
-Modern Gen-AI systems combine:
+### Definition
 
-* 🧠 LLMs
-* 🔍 Embeddings
-* 🗂️ Vector Databases
-* 🕸️ Knowledge Graphs
-* ⚡ AI Agents
-* 🧠 Memory Systems
+Convert the user query into a search-friendly query.
 
-to build intelligent, enterprise-grade AI applications.
+### Purpose
+
+Improve retrieval accuracy.
+
+### Example
+
+User Query:
+
+```text
+Teach me about ML.
+```
+
+Rewritten Query:
+
+```text
+Explain the fundamentals of machine learning.
+```
+
+---
+
+## 5. Query Embedding
+
+### Definition
+
+Convert the query into a vector representation.
+
+### Purpose
+
+Enable semantic search.
+
+### Example
+
+```text
+Explain the fundamentals of machine learning.
+```
+
+↓
+
+```text
+[0.52, -0.11, 0.78, ...]
+```
+
+## 6. Vector Search
+
+### Definition
+
+Search vector database for similar embeddings.
+
+### Purpose
+
+Find relevant knowledge.
+
+### Example
+
+Retrieve:
+
+```text
+Machine Learning Basics
+Supervised Learning
+Algorithms and Examples
+```
+
+---
+
+## 7. Top-N Retrieval
+
+### Definition
+
+Select the most relevant chunks.
+
+### Purpose
+
+Reduce noise and improve answer quality.
+
+### Example
+
+```text
+Top 5 Chunks
+```
+
+or
+
+```text
+Top 10 Chunks
+```
+
+based on similarity score.
+
+---
+
+## 8. Context Building
+
+### Definition
+
+Combine retrieved information and conversation context for the LLM.
+
+### Purpose
+
+Provide relevant context for answer generation.
+
+### Example
+
+```text id="4dchiy"
+Retrieved Chunk 1
+Retrieved Chunk 2
+Retrieved Chunk 3
+
++
+
+Previous Chat History
+
+↓
+
+system instructions.
+```
+
+---
+
+## 9. Answer Generation
+
+### Definition
+
+The LLM uses the query, instructions, and context to generate an answer.
+
+### Flow
+
+```text id="w9q89d"
+LLM
+ ↓
+Final Response
+```
+
+---
+
+## 10. Final Response
+
+### Definition
+
+The final answer returned to the user.
+
+### May Include
+
+* Sources
+* References
+* Follow-up Suggestions
+
+---
