@@ -92,6 +92,8 @@ Levels:
 
 # 🔄 7. Load Balancing
 
+Load balancing algorithms:
+
 * Round Robin - Sends requests to servers one by one in order.
 * Least Response Time - Chooses the server responding the fastest.
 
